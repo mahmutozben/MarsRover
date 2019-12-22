@@ -19,7 +19,7 @@ namespace MarsRover
 
         public void Start(string commands)
         {
-            Console.WriteLine(LocationInfo());
+            Console.WriteLine($"Current location : {LocationInfo()}");
             foreach (var command in commands)
             {
                 switch (command)

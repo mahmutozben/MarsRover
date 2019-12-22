@@ -43,11 +43,9 @@ namespace MarsRover
                 //First rover 
                 Console.WriteLine("First rover .......");
                 firstRover.Start(firstCommand);
-                Console.WriteLine(firstRover.LocationInfo());
                 //Second rover 
                 Console.WriteLine("Second rover .......");
                 secondRover.Start(secondCommand);
-                Console.WriteLine(secondRover.LocationInfo());
             }
 
             Console.ReadLine();
