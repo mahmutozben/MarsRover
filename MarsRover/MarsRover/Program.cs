@@ -17,14 +17,14 @@ namespace MarsRover
 
             //First rover 
             Console.WriteLine("First rover .......");
-            Rover firstRover = new Rover(new Position(1, 2), DirectionParameter.North);
+            var firstRover = new Rover(new Position(1, 2), DirectionParameter.North);
             firstRover.Start("LMLMLMLMM");
 
             Console.WriteLine();
 
             //Second rover 
             Console.WriteLine("Second rover .......");
-            Rover secondRover = new Rover(new Position(3, 3), DirectionParameter.East);
+            var secondRover = new Rover(new Position(3, 3), DirectionParameter.East);
             secondRover.Start("MMRMMRMRRM");
 
             Console.WriteLine("Expected Output:");
