@@ -19,7 +19,7 @@ namespace MarsRover
 
         public void Start(string commands)
         {
-            Console.WriteLine(ToString());
+            Console.WriteLine(LocationInfo());
             foreach (var command in commands)
             {
                 switch (command)
@@ -36,7 +36,7 @@ namespace MarsRover
                     default:
                         throw new Exception($"command : {command} is not invalid.");
                 }
-                Console.WriteLine(ToString());
+                Console.WriteLine(LocationInfo());
             }
         }
 
@@ -71,7 +71,7 @@ namespace MarsRover
             direction = (DirectionParameter)((int)direction < (int)DirectionParameter.West ? (int)direction + 1 : (int)direction - 3);
         }
 
-        public override string ToString()
+        public string LocationInfo()
         {
             return $" x : {x} y : {y} direction : {Enumeration.GetAll<Direction>().FirstOrDefault(x => x.Id == (int)direction).ToString()}";
         }
