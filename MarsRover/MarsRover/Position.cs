@@ -12,12 +12,12 @@
         public int X { get; private set; }
         public int Y { get; private set; }
 
-        public void Set_X_Coordinate(int value)
+        public void AddValueTo_X_Coordinate(int value)
         {
             this.X += value;
         }
 
-        public void Set_Y_Coordinate(int value)
+        public void AddValueTo_Y_Coordinate(int value)
         {
             this.Y += value;
         }

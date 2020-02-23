@@ -9,16 +9,16 @@ namespace MarsRover
             switch (position.Direction)
             {
                 case Directions.North:
-                    position.Set_Y_Coordinate(1);
+                    position.AddValueTo_Y_Coordinate(1);
                     break;
                 case Directions.East:
-                    position.Set_X_Coordinate(1);
+                    position.AddValueTo_X_Coordinate(1);
                     break;
                 case Directions.South:
-                    position.Set_Y_Coordinate(-1);
+                    position.AddValueTo_Y_Coordinate(-1);
                     break;
                 case Directions.West:
-                    position.Set_X_Coordinate(-1);
+                    position.AddValueTo_X_Coordinate(-1);
                     break;
                 default:
                     break;
