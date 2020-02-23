@@ -1,79 +1,127 @@
-﻿using MarsRover.Constants;
-using MarsRover.Interfaces;
+﻿using MarsRover.Interfaces;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace MarsRover
 {
-    public class Rover : ICommand
+    public enum RoverStatus
     {
-        private int x;
-        private int y;
-        private DirectionParameter direction;
-        public Rover(Position position, DirectionParameter _direction)
+        Dead = 0,
+        InBorder = 1,
+        InPlateu = 2
+    }
+    public class Rover
+    {
+        public List<Position> _placesOfDeath { get; }
+        private Plateau Plateau;
+
+        public Rover()
         {
-            this.x = position.X;
-            this.y = position.Y;
-            this.direction = _direction;
+            _placesOfDeath = new List<Position>();
+            this.Plateau = new Plateau(5, 5, 0, 0);
+        }
+        public Rover(Plateau plateau)
+        {
+            _placesOfDeath = new List<Position>();
+            this.Plateau = plateau;
         }
 
-        public void Start(string commands)
+        public Position Start(Position position, string commands)
         {
-            Console.WriteLine($"Current location : {LocationInfo()}");
-            foreach (var command in commands)
+            Console.WriteLine($"Current location : {LocationInfo(position)}");
+
+            ICommand command = new RoverCommand();
+            var direction = Direction.GetDirection(position.Direction);
+
+            foreach (var cmd in commands)
             {
-                switch (command)
+                switch (cmd)
                 {
                     case Commands.Left:
-                        TurnLeft();
+                        direction = command.TurnLeft((Directions)direction.Id);
+                        position.SetDirection((Directions)direction.Id);
                         break;
                     case Commands.Right:
-                        TurnRight();
+                        direction = command.TurnRight((Directions)direction.Id);
+                        position.SetDirection((Directions)direction.Id);
                         break;
                     case Commands.Move:
-                        Move();
+                        {
+                            if (IsThereAnyDeathHere(position))
+                            {
+                                Console.WriteLine("You cannot go further. Try another direction please..");
+                                var newCommand = Console.ReadLine();
+                                this.Start(position, newCommand);
+                            }
+
+                            position = command.Move(position);
+
+                            if (CheckPosition(position) == RoverStatus.Dead)
+                            {
+                                Console.WriteLine("Rest in peace!");
+                                commands = string.Empty;
+                            }
+                        }
                         break;
                     default:
                         throw new Exception($"command : {command} is not invalid.");
                 }
-                Console.WriteLine(LocationInfo());
+                Console.WriteLine(LocationInfo(position));
             }
+
+            return position;
         }
 
-        public void Move()
+        public RoverStatus CheckPosition(Position position)
         {
-            switch (direction)
+            var roverStatus = RoverStatus.InPlateu;
+
+            if (position.X > Plateau.Max_X_Coordinate || position.X < Plateau.Min_X_Coordinate)
             {
-                case DirectionParameter.North:
-                    y += 1;
-                    break;
-                case DirectionParameter.East:
-                    x += 1;
-                    break;
-                case DirectionParameter.South:
-                    y -= 1;
-                    break;
-                case DirectionParameter.West:
-                    x -= 1;
-                    break;
-                default:
-                    break;
+                roverStatus = RoverStatus.Dead;
+                AddPlaceofDeath(position);
             }
+            else if (position.Y > Plateau.Max_Y_Coordinate || position.Y < Plateau.Min_Y_Coordinate)
+            {
+                roverStatus = RoverStatus.Dead;
+                AddPlaceofDeath(position);
+            }
+
+            return roverStatus;
         }
 
-        public void TurnLeft()
+        public bool IsThereAnyDeathHere(Position position)
         {
-            direction = (DirectionParameter)((int)direction > (int)DirectionParameter.North ? (int)direction - 1 : (int)direction + 3 );
+            bool result = false;
+
+            if (_placesOfDeath.Any(pst => pst.X == position.X + 1 && pst.Y == position.Y && pst.Direction == position.Direction))
+            {
+                result = true;
+            }
+            else if (_placesOfDeath.Any(pst => pst.X == position.X - 1 && pst.Y == position.Y && pst.Direction == position.Direction))
+            {
+                result = true;
+            }
+            else if (_placesOfDeath.Any(pst => pst.Y == position.Y + 1 && pst.X == position.X && pst.Direction == position.Direction))
+            {
+                result = true;
+            }
+            else if (_placesOfDeath.Any(pst => pst.Y == position.Y - 1 && pst.X == position.X && pst.Direction == position.Direction))
+            {
+                result = true;
+            }
+
+            return result;
         }
 
-        public void TurnRight()
+        public void AddPlaceofDeath(Position position)
         {
-            direction = (DirectionParameter)((int)direction < (int)DirectionParameter.West ? (int)direction + 1 : (int)direction - 3);
+            _placesOfDeath.Add(position);
         }
-
-        public string LocationInfo()
+        public string LocationInfo(Position position)
         {
-            return $" x : {x} y : {y} direction : {Enumeration.GetAll<Direction>().FirstOrDefault(x => x.Id == (int)direction).ToString()}";
+            return $" x : {position.X} y : {position.Y} direction : {Enumeration.GetAll<Direction>().FirstOrDefault(x => x.Id == (int)position.Direction).ToString()}";
         }
     }
 }

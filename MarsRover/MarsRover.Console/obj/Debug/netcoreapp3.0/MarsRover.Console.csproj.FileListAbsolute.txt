@@ -1,0 +1,14 @@
+C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover.Console\bin\Debug\netcoreapp3.0\MarsRover.Console.exe
+C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover.Console\bin\Debug\netcoreapp3.0\MarsRover.Console.deps.json
+C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover.Console\bin\Debug\netcoreapp3.0\MarsRover.Console.runtimeconfig.json
+C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover.Console\bin\Debug\netcoreapp3.0\MarsRover.Console.runtimeconfig.dev.json
+C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover.Console\bin\Debug\netcoreapp3.0\MarsRover.Console.dll
+C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover.Console\bin\Debug\netcoreapp3.0\MarsRover.Console.pdb
+C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover.Console\bin\Debug\netcoreapp3.0\MarsRover.dll
+C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover.Console\bin\Debug\netcoreapp3.0\MarsRover.pdb
+C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover.Console\obj\Debug\netcoreapp3.0\MarsRover.Console.csprojAssemblyReference.cache
+C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover.Console\obj\Debug\netcoreapp3.0\MarsRover.Console.AssemblyInfoInputs.cache
+C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover.Console\obj\Debug\netcoreapp3.0\MarsRover.Console.AssemblyInfo.cs
+C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover.Console\obj\Debug\netcoreapp3.0\MarsRover.Console.csproj.CopyComplete
+C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover.Console\obj\Debug\netcoreapp3.0\MarsRover.Console.dll
+C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover.Console\obj\Debug\netcoreapp3.0\MarsRover.Console.pdb

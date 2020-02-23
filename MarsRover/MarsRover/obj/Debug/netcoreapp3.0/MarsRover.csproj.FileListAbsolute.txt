@@ -1,11 +1,8 @@
-C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover\bin\Debug\netcoreapp3.0\MarsRover.exe
 C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover\bin\Debug\netcoreapp3.0\MarsRover.deps.json
-C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover\bin\Debug\netcoreapp3.0\MarsRover.runtimeconfig.json
-C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover\bin\Debug\netcoreapp3.0\MarsRover.runtimeconfig.dev.json
 C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover\bin\Debug\netcoreapp3.0\MarsRover.dll
 C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover\bin\Debug\netcoreapp3.0\MarsRover.pdb
-C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover\obj\Debug\netcoreapp3.0\MarsRover.csprojAssemblyReference.cache
 C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover\obj\Debug\netcoreapp3.0\MarsRover.AssemblyInfoInputs.cache
 C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover\obj\Debug\netcoreapp3.0\MarsRover.AssemblyInfo.cs
 C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover\obj\Debug\netcoreapp3.0\MarsRover.dll
 C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover\obj\Debug\netcoreapp3.0\MarsRover.pdb
+C:\Users\mahmut\source\repos\mahmutozben\MarsRover\MarsRover\MarsRover\obj\Debug\netcoreapp3.0\MarsRover.csprojAssemblyReference.cache
